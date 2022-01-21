@@ -5,39 +5,22 @@
 # If your yaml file has anything other than these, the code below won't work properly
 # (expanded and displayName are optional, they are discarded when found)
 
-# libraries needed
-library(yaml)
-library(data.table)
-library(dplyr)
 
-# specify the filename to read & the name to use for the csv file
+## SPECIFY INPUTS
 # I'm reading from my local repo directory
 filename <- "C:/GitPrivate/azure-docs-sdg/articles/machine-learning/toc.yml"
 # Or test with this one 
 # filename <- 'toc.yml'
 writefile <- "ML-toc.csv"
+myrepo = "C:/GitPrivate/azure-docs-sdg/articles/machine-learning"
 
+# libraries used
+library(yaml)
+library(data.table)
+library(dplyr)
 
-expanditems <- function(dt){
-  # Function to expand list into rows and merge back to dt
-  # creates a second dt (unlisted) with expanded list, then merges to initial dt
-  # from https://datacornering.com/how-to-unlist-a-nested-list-in-r/
-
-  library(data.table)
-  library(dplyr)
-  
-  unlisted <- rbindlist(dt$items, fill = T, idcol = "id") # unlist nested list with id
-  dt$id <- seq.int(nrow(dt)) # create same id in remaining data frame
-  dt <- left_join(dt, unlisted, by = "id") # join data table with unlisted list
-  
-  # delete columns  
-  dt$id <- NULL
-  dt$displayName <- NULL
-  if ("expanded.x" %in% names(dt)) {dt$expanded.x <- NULL} # this col isn't used, delete so it doesn't merge in next ste
-  if ("expanded.y" %in% names(dt)) {dt$expanded.y <- NULL} # this col isn't used, delete so it doesn't merge in next ste
-  if ("items.x" %in% names(dt)) {dt$items.x <- NULL} # this is the column that was expanded.  items$y is the next one to expand
-  return(dt)
-}
+source("expandItems.R")
+source("getMetadata.R")
 
 ## STEP 1: Read TOC & process it:
 
@@ -50,18 +33,17 @@ data <- read_yaml(filename) #initial data - big list with one row per heading
 library(data.table)
 dt<- rbindlist(data, fill=TRUE) # now we have one row for each first level item
 
-## Not elegant but IT WORKS!!! Don't mess with success.
 ## Each time you call the function, you'll get one more level of the TOC.  
 ## keep going as long as there is still an items.y column.  
 
-dt<- expanditems(dt)  # FIRST TIME 
+dt<- expandItems(dt)  # FIRST TIME (outside loop because no items.y yet, first merge will create it)
 level <- 2            # keep track of how many levels
 
 while ("items.y" %in% names(dt)){
-  #change the name to items before using expanditems.
+  #change the name to items before using expandItems.
   names(dt)[names(dt) == "items.y"] <- "items"
   level <- level + 1
-  dt<- expanditems(dt)
+  dt<- expandItems(dt)
 }
 
 ## Done with expanding ##
@@ -95,7 +77,12 @@ dt$filename <- do.call(paste, c(dt[f], sep = ""))
 dt <- dt[, -which(names(dt) %in% f)]
 
 
-## STEP 3: Write the csv file
-write.csv(dt, file= writefile, na="")
+## STEP 3: Write the csv file - uncomment the next line and stop here if you wish
+# write.csv(dt, file= writefile, na="")
 
+## CONTINUE ON to add metadata to the file
+myrepo = "C:/GitPrivate/azure-docs-sdg/articles/machine-learning"
+metadata <- getMetadata(myrepo, writefile)
 
+merged <- left_join(dt, metadata, by = "filename")
+write.csv(merged, file= writefile, na="")
