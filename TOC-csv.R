@@ -81,7 +81,7 @@ dt <- dt[, -which(names(dt) %in% f)]
 # write.csv(dt, file= writefile, na="")
 
 ## CONTINUE ON to add metadata to the file
-metadata <- getMetadata(myrepo, writefile)
+metadata <- getMetadata(myrepo)
 
 merged <- left_join(dt, metadata, by = "filename")
 write.csv(merged, file= writefile, na="")
