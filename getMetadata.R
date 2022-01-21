@@ -1,7 +1,9 @@
-# Append metadta to TOC info
-# Run this after TOC-csv.R if you want to append metadata info to the file
+# Get metadta for .md files in a single directory
+# Input: the directory path
+# Output: a data.table with filename and metadata.  
+# Currently, adding only ms.author and ms.reviewer
 
-getMetadata <- function(myrepo, writefile){
+getMetadata <- function(myrepo){
                         
 library(data.table)
 

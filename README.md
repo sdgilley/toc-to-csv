@@ -23,6 +23,10 @@ Optionally, the following entries may exist.  They will be removed in the code.
 
 If your yaml file contains anything other than the above, the code will need to be revised to handle them.  
 
-## add-metadata.R
+## Functions
 
-Use this script to add metadata for each article in the TOC.  You must first run the TOC-csv.R script to create the initial data (but you can skip writing the final file if you wish).  Then run add-metadata.R to find metadata in the files and merge by filename.
+Each function is in its own file.  The functions are:
+
+* `expandItems` takes a data.table that contains a list.  It expands the list and merges back to the data.table, then returns the data.table.
+
+* `getMetadata` loops through the *.md files in your local docs repository directory, extracts metadata, and returns a data.table that contains each filename with its metadata.  Currently, the only metadata added is `ms.author` and `ms.reviewer`.  It would be simple to modify this to add other fields as well.

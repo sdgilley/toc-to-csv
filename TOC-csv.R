@@ -81,7 +81,6 @@ dt <- dt[, -which(names(dt) %in% f)]
 # write.csv(dt, file= writefile, na="")
 
 ## CONTINUE ON to add metadata to the file
-myrepo = "C:/GitPrivate/azure-docs-sdg/articles/machine-learning"
 metadata <- getMetadata(myrepo, writefile)
 
 merged <- left_join(dt, metadata, by = "filename")
