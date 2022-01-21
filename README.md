@@ -1,8 +1,8 @@
 # toc-to-csv R script
 
-Turn a TOC.YML file into a .CSV file for further work in Excel. This repository contains two R scripts, one to create the initial csv file, and a second if you want to add further metadata from each file into the rows.
+Turn a TOC.YML file into a .CSV file for further work in Excel. Also add metadata from the files, such as `ms.author` and `ms.reviewer`.
 
-The script is set up to read from the toc file in your local docs repository.  But there is is also a sample file included which you could use instead for TOC-csv.R. 
+The script is set up to read from the toc file in your local docs repository.  But there is is also a sample file included, which you could use to see how it works. 
 
 ## TOC-csv.R
 
@@ -13,13 +13,13 @@ This R script will read in a toc.yml file and create a .csv file.  The resulting
 In the spreadsheet, the final column contains the title of the article, previous columns shows the parents for that item.  This preserves the hierarchy for each item.   You can then sort without losing context, also sort back to the original order from the first column.
 
 The input file must contain these entries:
-* name 
-* href
-* items
+* `name` 
+* `href`
+* `items`
 
 Optionally, the following entries may exist.  They will be removed in the code.
-* displayName (optional)
-* expanded (optional)
+* `displayName` (optional)
+* `expanded` (optional)
 
 If your yaml file contains anything other than the above, the code will need to be revised to handle them.  
 
