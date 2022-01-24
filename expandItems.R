@@ -18,8 +18,9 @@ expandItems <- function(dt){
   # delete columns  
   dt$id <- NULL
   dt$displayName <- NULL
-  if ("expanded.x" %in% names(dt)) {dt$expanded.x <- NULL} # this col isn't used, delete so it doesn't merge in next ste
-  if ("expanded.y" %in% names(dt)) {dt$expanded.y <- NULL} # this col isn't used, delete so it doesn't merge in next ste
+  if ("expanded" %in% names(dt)) {dt$expanded <- NULL} # this col isn't used, delete so it doesn't merge in next step
+  if ("expanded.x" %in% names(dt)) {dt$expanded.x <- NULL} # this col isn't used, delete so it doesn't merge in next step
+  if ("expanded.y" %in% names(dt)) {dt$expanded.y <- NULL} # this col isn't used, delete so it doesn't merge in next step
   if ("items.x" %in% names(dt)) {dt$items.x <- NULL} # after merge, this is the column that was expanded.  items$y is the next one to expand
   return(dt)
 }
