@@ -10,7 +10,7 @@ This R script will read in a toc.yml file and create a .csv file.  The resulting
 
 ![Excel spreadsheet for example toc](media/excel.png "Excel display of CSV")
 
-In the spreadsheet, the final column contains the title of the article, previous columns shows the parents for that item.  This preserves the hierarchy for each item.   You can then sort without losing context, also sort back to the original order from the first column.
+In the spreadsheet, the last non-blank column contains the title of the article, previous columns shows the parents for that item.  This preserves the hierarchy for each item.   You can then sort without losing context, also sort back to the original order from the first column.
 
 The input file must contain these entries:
 * `name` 
