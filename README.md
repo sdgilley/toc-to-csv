@@ -50,7 +50,7 @@ Each function is in its own file.  The functions are:
 1. Open it in your R IDE, such as RStudio
 1. Open the file `installs.R` and run it to install packages
 1. Open the file `TOC-csv.R`
-1. Add your path to your toc file in the `## SPECIFY INPUTS` section
+1. Add the path to your toc file in the `## SPECIFY INPUTS` section
 1. Run the entire file
   
 ### New to R? Full installation instructions
@@ -72,7 +72,7 @@ Each function is in its own file.  The functions are:
     ```
     
 1. Edit the file `TOC-csv.R` in any text editor
-1. Add your path to your toc file in the `## SPECIFY INPUTS` section
+1. Add the path to your toc file in the `## SPECIFY INPUTS` section
 1. Save the file
 1. In the terminal window, run the script:
   
