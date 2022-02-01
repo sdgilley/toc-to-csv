@@ -37,3 +37,46 @@ Each function is in its own file.  The functions are:
   * loops through the .md files in the input directory. (Does not traverse subdirectories.)
   * extracts metadata from each file (currently, `ms.author` and `ms.reviewer`.  It would be simple to modify this to add others if you wish)
   * returns a data.table that contains each filename and its metadata.  
+
+## Installation
+
+### For R users 
+
+1. Clone this repo 
+  
+  ```
+  git clone https://github.com/sdgilley/toc-to-csv.git
+  ```
+1. Open it in your R IDE, such as RStudio
+1. Open the file `installs.R` and run it to install packages
+1. Open the file `TOC-csv.R`
+1. Add your path to your toc file in the `## SPECIFY INPUTS` section
+1. Run the entire file
+  
+### New to R? Full installation instructions
+
+1. [Download and install R](https://cran.r-project.org/)
+  * During install, copy the path where R will be installed
+  * When install is complete, edit your PATH system variable and add what you just copied, appending "\bin" to the end.  For example, "C:\Program Files\R\R-4.1.2\bin" if your installation directory is C:\Program Files\R\R-4.1.2""
+  
+1. Clone this repo 
+  
+  ```
+  git clone https://github.com/sdgilley/toc-to-csv.git
+  ```
+1. In a terminal window, `cd` to the cloned repo
+1. Run the `installs.R` program (You only need to do this once)
+  
+    ```
+    rscript.exe installs.r
+    ```
+    
+1. Edit the file `TOC-csv.R` in any text editor
+1. Add your path to your toc file in the `## SPECIFY INPUTS` section
+1. Save the file
+1. In the terminal window, run the script:
+  
+    ```
+    rscript.exe TOC-csv.R
+    ```
+  
