@@ -2,11 +2,11 @@
 
 Turn a TOC.YML file into a .CSV file for further work in Excel. Also add metadata from the files, such as `ms.author` and `ms.reviewer`.
 
-The script is set up to read from the toc file in your local docs repository.  But there is is also a sample file included, which you could use to see how it works before you turn it loose on your own TOC.
+The script reads from the toc file in your local docs repository.  
 
 ## TOC-csv.R
 
-This R script will read in a toc.yml file and create a .csv file.  The resulting .csv file will look like this: 
+This R script will read your toc.yml file and creates a .csv file.  The resulting .csv file will look like this: 
 
 ![Excel spreadsheet for example toc](media/excel.png "Excel display of CSV")
 

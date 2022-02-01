@@ -1,18 +1,15 @@
 # Create a .csv file from a toc.yml file  
-# WARNING 
-# The input file should include the following yaml entries:
+# #### WARNING ####
+# The input file should not include anything other than the following yaml entries:
 # name, href, displayName, expanded, items
 # If your yaml file has anything other than these, the code below won't work properly
 # (expanded and displayName are optional, they are discarded when found)
 
 
 ## SPECIFY INPUTS
-# I'm reading from my local repo directory
-filename <- "C:/GitPrivate/azure-docs-sdg/articles/machine-learning/toc.yml"
-# Or test with this one 
-# filename <- 'toc.yml'
+myrepo = "C:/GitPrivate/azure-docs-pr/articles/machine-learning"
+filename <- file.path(myrepo, "toc.yml")
 writefile <- "ML-toc.csv"
-myrepo = "C:/GitPrivate/azure-docs-sdg/articles/machine-learning"
 
 # libraries used
 library(yaml)
