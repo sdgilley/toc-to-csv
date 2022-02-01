@@ -3,12 +3,12 @@
 # Output: a data.table with filename and metadata.  
 # Currently, adding only ms.author and ms.reviewer
 
-getMetadata <- function(myrepo){
+getMetadata <- function(path){
                         
 library(data.table)
 
 # get all the markdown files in the directory
-files <- list.files(path=myrepo, pattern=".md$", all.files=FALSE,
+files <- list.files(path=path, pattern=".md$", all.files=FALSE,
            full.names=FALSE)
 
 metadata <- data.table()
