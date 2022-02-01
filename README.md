@@ -27,13 +27,13 @@ If your yaml file contains anything other than the above, the code as is would n
 
 Each function is in its own file.  The functions are:
 
-* `expandItems` takes a data.table that contains a list column, named `items`.  It 
+* `expandItems(dt)` - `dt` is a data.table that contains a list column, named `items`.
   * expands the list into new columns
   * deletes all columns except for the ones corresponding to name, href, and items
   * merges these columns back to the data.table
   * returns the data.table
 
-* `getMetadata` 
-  * loops through the .md files in your local docs repository directory
+* `getMetadata(path)` - `path` is the path to the directory that contains your TOC
+  * loops through the .md files in the input directory. (Does not traverse subdirectories.)
   * extracts metadata from each file (currently, `ms.author` and `ms.reviewer`.  It would be simple to modify this to add others if you wish)
   * returns a data.table that contains each filename and its metadata.  
