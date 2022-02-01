@@ -44,9 +44,9 @@ Each function is in its own file.  The functions are:
 
 1. Clone this repo 
   
-  ```
-  git clone https://github.com/sdgilley/toc-to-csv.git
-  ```
+   ```
+   git clone https://github.com/sdgilley/toc-to-csv.git
+   ```
 1. Open it in your R IDE, such as RStudio
 1. Open the file `installs.R` and run it to install packages
 1. Open the file `TOC-csv.R`
@@ -61,9 +61,9 @@ Each function is in its own file.  The functions are:
   
 1. Clone this repo 
   
-  ```
-  git clone https://github.com/sdgilley/toc-to-csv.git
-  ```
+   ```
+   git clone https://github.com/sdgilley/toc-to-csv.git
+   ```
 1. In a terminal window, `cd` to the cloned repo
 1. Run the `installs.R` program (You only need to do this once)
   
