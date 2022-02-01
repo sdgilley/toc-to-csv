@@ -52,6 +52,8 @@ Each function is in its own file.  The functions are:
 1. Open the file `TOC-csv.R`
 1. Add the path to your toc file in the `## SPECIFY INPUTS` section
 1. Run the entire file
+1. The filename specified the INPUTS section (mytoc.csv unless you changed it) will be created in your current directory.
+
   
 ### New to R? Full installation instructions
 
@@ -79,4 +81,5 @@ Each function is in its own file.  The functions are:
     ```
     rscript.exe TOC-csv.R
     ```
-  
+ 1. The filename specified the INPUTS section (mytoc.csv unless you changed it) will be created in your current directory.
+
