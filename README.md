@@ -56,8 +56,8 @@ Each function is in its own file.  The functions are:
 ### New to R? Full installation instructions
 
 1. [Download and install R](https://cran.r-project.org/)
-  * During install, copy the path where R will be installed
-  * When install is complete, edit your PATH system variable and add what you just copied, appending "\bin" to the end.  For example, "C:\Program Files\R\R-4.1.2\bin" if your installation directory is C:\Program Files\R\R-4.1.2""
+   * During install, copy the path where R will be installed
+   * When install is complete, edit your PATH system variable and add what you just copied, appending "\bin" to the end.  For example, "C:\Program Files\R\R-4.1.2\bin" if your installation directory is C:\Program Files\R\R-4.1.2""
   
 1. Clone this repo 
   
