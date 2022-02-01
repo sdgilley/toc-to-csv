@@ -3,3 +3,4 @@
 install.packages("yaml", repos='http://cran.us.r-project.org')
 install.packages("data.table", repos='http://cran.us.r-project.org')
 install.packages("dplyr", repos='http://cran.us.r-project.org')
+install.packages("rmarkdown", repos='http://cran.us.r-project.org')
