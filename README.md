@@ -1,8 +1,8 @@
 # toc-to-csv R script
 
-For repositories on https://github.com/MicrosoftDocs.  Turn your TOC.YML file into a .CSV file for further work in Excel. Also add metadata from the files, such as `ms.author` and `ms.reviewer`.
+For repositories on https://github.com/MicrosoftDocs.  Turn your **toc.yml** file into a .CSV file for further work in Excel. Also add metadata from the files, such as `ms.author` and `ms.reviewer`.
 
-The script reads from the toc.yml file in your local docs repository.  
+The script reads from the **toc.yml** file in your local docs repository. It also loops through the files of the directory to read metadata.
 
 ## TOC-csv.R
 
@@ -25,9 +25,9 @@ If your yaml file contains anything other than the above, the code as is would n
 
 ## Current limitations
 
-* Use this when your TOC is in the same directory as the files  
-* The script is not set up to handle includes in the TOC
-* The current version may not work well with 1000s of entries 
+* The script is not set up to handle includes in the TOC.
+* Metadata will be added only for files in the same directory as the TOC.  Files in sub-directories will not be read.
+* The current version may not work well with 1000s of entries.
 
 ## Installation
 
@@ -44,7 +44,7 @@ If your yaml file contains anything other than the above, the code as is would n
    ```
    git clone https://github.com/sdgilley/toc-to-csv.git
    ```
-1. Open a windows terminal as Admin
+1. Open a windows terminal as *Admin*
 1. `cd` to the cloned repo
 1. Run the `installs.R` program (You only need to do this once). 
   
@@ -62,7 +62,7 @@ If your yaml file contains anything other than the above, the code as is would n
     rscript.exe TOC-csv.R
     ```
     
- 1. The filename specified in the INPUTS section (mytoc.csv unless you changed it) will be created in your current directory.
+ 1. The filename specified in the INPUTS section (**mytoc.csv**, unless you changed it) will be created in your current directory.
 
 ### For R users 
 
