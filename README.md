@@ -1,8 +1,8 @@
 # toc-to-csv R script
 
-Turn a TOC.YML file into a .CSV file for further work in Excel. Also add metadata from the files, such as `ms.author` and `ms.reviewer`.
+For repositories on https://github.com/MicrosoftDocs.  Turn your TOC.YML file into a .CSV file for further work in Excel. Also add metadata from the files, such as `ms.author` and `ms.reviewer`.
 
-The script reads from the toc file in your local docs repository.  
+The script reads from the toc.yml file in your local docs repository.  
 
 ## TOC-csv.R
 
