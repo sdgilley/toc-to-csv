@@ -15,12 +15,5 @@ expandItems <- function(dt){
   dt$id <- seq.int(nrow(dt)) # create same id in remaining data frame
   dt <- left_join(dt, unlisted, by = "id") # join data table with unlisted list
   
-  # delete columns  
-  dt$id <- NULL
-   if ("displayName" %in% names(dt)) {dt$displayName <- NULL}
-  if ("expanded" %in% names(dt)) {dt$expanded <- NULL} # this col isn't used, delete so it doesn't merge in next step
-  if ("expanded.x" %in% names(dt)) {dt$expanded.x <- NULL} # this col isn't used, delete so it doesn't merge in next step
-  if ("expanded.y" %in% names(dt)) {dt$expanded.y <- NULL} # this col isn't used, delete so it doesn't merge in next step
-  if ("items.x" %in% names(dt)) {dt$items.x <- NULL} # after merge, this is the column that was expanded.  items$y is the next one to expand
   return(dt)
 }
