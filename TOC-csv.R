@@ -7,7 +7,7 @@
 
 
 ## SPECIFY INPUTS
-myrepo = "C:/GitPrivate/azure-docs-pr/articles/machine-learning"
+myrepo = "C:/GitPrivate/azure-docs-sdg/articles/machine-learning"
 filename <- file.path(myrepo, "toc.yml")
 writefile <- "ML-toc.csv"
 
@@ -81,4 +81,10 @@ dt <- dt[, -which(names(dt) %in% f)]
 metadata <- getMetadata(myrepo)
 
 merged <- left_join(dt, metadata, by = "filename")
-write.csv(merged, file= writefile, na="")
+
+# Pick out the cliv1 and cliv2 entries only
+merged$cliv1 <- grepl( "cliv1", merged$ms.custom, fixed = TRUE)
+merged$cliv2 <- grepl( "cliv2", merged$ms.custom, fixed = TRUE)
+cli <- subset(merged, merged$cliv1 == TRUE | merged$cliv2 == TRUE)   # Apply subset function
+cli$ms.custom <- NULL
+write.csv(cli, file= "cli-docs.csv", na="")
