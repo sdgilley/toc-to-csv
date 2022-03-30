@@ -19,7 +19,8 @@ for (i in 1:length(files)) {
   # I'm appending the ms.author and ms.reviewer here - customize as you see fit!
   newrow <- data.table(filename =files[i], 
                        ms.author=yml_metadata[["ms.author"]], 
-                       ms.reviewer=yml_metadata[["ms.reviewer"]])
+                       ms.reviewer=yml_metadata[["ms.reviewer"]],
+                       ms.custom=yml_metadata[["ms.custom"]])
   metadata <- rbind(metadata, newrow, fill=T)
   }
 
