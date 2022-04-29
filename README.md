@@ -33,7 +33,7 @@ This script shows some examples of subsetting the initial data.frame by searchin
 
 * The script is not set up to handle includes in the TOC.
 * Metadata will be added only for files in the same directory as the TOC.  *Files in sub-directories will not be read.* Use the function again with the sub-directory as input to get those contents.
-* The current version may not work well with 1000s of entries.  I've been using it for a directory with a little over 250 files, which takes around 30 seconds to complete.
+* The current version may not work well with 1000s of entries.  I've been using it for a directory with a little over 250 files, which takes around 6-7 seconds to complete.
 
 ## Installation
 
