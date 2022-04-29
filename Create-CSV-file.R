@@ -6,7 +6,7 @@
 # (expanded and displayName are optional, they are discarded when found)
 
 
-source("create-merged.R")
+source("createMerged.R")
 myrepo = "C:/GitPrivate/azure-docs-sdg/articles/machine-learning"
 
 merged <- createMerged(myrepo)
