@@ -82,10 +82,12 @@ If you already have R installed, here's the steps to use the script in your IDE.
 1. Open it in your R IDE, such as RStudio
 1. Open the file `installs.R` and run it to install packages
 1. Open the file `Create-CSV.R`
+
 1. Change the path to your toc file in `myrepo`
 1. Change the name of the file to be written if you wish
 1. Run the entire file
 1. The csv file will be created in your current directory.
+
 
 
 ## If you want to know more

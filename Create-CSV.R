@@ -12,7 +12,7 @@ source("createMerged.R")
 ## CHANGE THIS PATH TO YOUR REPO!
 myrepo = "C:/GitPrivate/azure-docs-sdg/articles/machine-learning"
 
-# for my toc with 286 files, this takes about 30 seconds
+# for my toc with 286 files, this takes about 6-7 seconds
 merged <- createMerged(myrepo)
 write.csv(merged, file= "all-docs.csv", na="")
 
