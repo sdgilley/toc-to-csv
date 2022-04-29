@@ -1,21 +1,8 @@
-# Create a .csv file from a toc.yml file  
-# #### WARNING ####
-# The input file should not include anything other than the following yaml entries:
-# name, href, displayName, expanded, items
-# If your yaml file has anything other than these, the code below won't work properly
-# (expanded and displayName are optional, they are discarded when found)
+## Run Create-CSV first to create the main data.frame, merged.
 
+## Here's some subsets I've created by searching for specific terms in ms.custom.
 
-source("createMerged.R")
-myrepo = "C:/GitPrivate/azure-docs-sdg/articles/machine-learning"
-
-merged <- createMerged(myrepo)
-write.csv(merged, file= "all-docs.csv", na="")
-
-### That's the full file. 
-### Continue on if you want to create subsets of this.
-
-# Pick out the cliv1 and cliv2 entries only
+# Pick out the cliv1 and cliv2 entries only from custom metadata
 merged$cliv1 <- grepl( "cliv1", merged$ms.custom, fixed = TRUE)
 merged$cliv2 <- grepl( "cliv2", merged$ms.custom, fixed = TRUE)
 cli1 <- subset(merged, merged$cliv1 == TRUE )   # Apply subset function
