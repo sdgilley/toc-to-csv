@@ -39,7 +39,7 @@ This script shows some examples of subsetting the initial data.frame by searchin
 
 ### New to R? Installation instructions (for Windows)
 
-[Skip to next section](#for-r-users) if you already have R installed.
+[Skip to next section](#for-r-users) if you're already using R.
 
 1. [Download and install R](https://cran.r-project.org/)
    * During install, copy the path where R will be installed
