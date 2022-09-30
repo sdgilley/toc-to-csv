@@ -1,6 +1,6 @@
 # funcion to create initial set of files from myrepo
 
-createMerged <- function (myrepo, merge = T){
+createFinal <- function (myrepo, merge = T){
   
   # form the filename from myrepo
   filename <- file.path(myrepo, "toc.yml")

@@ -94,11 +94,11 @@ If you already have R installed, here's the steps to use the script in your IDE.
 
 The main script is **Create-CSV.R**.  This is where you specify the path to your TOC file, and can change the name of the .csv file that is produced.
 
-The heavy work occurs in the function `createMerged`, which reads in the yml file and creates a data.table.  The initial version of the data is an object contains three columns: `name`, `href`, and `items`.  
+The heavy work occurs in the function `createFinal`, which reads in the yml file and creates a data.table.  The initial version of the data is an object contains three columns: `name`, `href`, and `items`.  
 
 The function `expandItems` is used to expand an `items` list and merge in columns for the next level of the hierarchy.  This continues until there are no more levels to expand.
 
-Finally, the function `getMetadata` is used to obtain metadata for each file in the directory.  This is then merged with the data from the toc.
+Finally, if merge==T, the function `getMetadata` is used to obtain metadata for each file in the directory.  This is then merged with the data from the toc.
 
 Some cleanup is performed and the merged file is returned.  **Create-CSV.R** then writes this merged object as a *csv* file.
 
@@ -106,10 +106,10 @@ Some cleanup is performed and the merged file is returned.  **Create-CSV.R** the
 
 The script uses three functions. Each function is in its own file.  The functions are:
 
-* `createMerged(myrepo)` - `myrepo` is a path to the repo containing your files. 
+* `createFinal(myrepo, merge)` - `myrepo` is a path to the repo containing your files. 
   * reads the **toc.yml** file in the myrepo path into an object
   * calls `expandItems` to form the set of columns to describe each file.
-  * calls `getMetadata` to add metadata
+  * if merge==T (default): calls `getMetadata` to add metadata.  Set merge to F to skip adding metadata.
   * returns the final data.frame containing columns for each level of the TOC, filename, and metadata,
  
 * `expandItems(dt)` - `dt` is a data.table that contains a list column, named `items`. This function:
