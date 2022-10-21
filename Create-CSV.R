@@ -7,14 +7,14 @@
 # (expanded and displayName are optional, they are discarded when found)
 
 
-source("createMerged.R")
+source("createFinal.R")
 
 ## CHANGE THIS PATH TO YOUR REPO!
 myrepo = "C:/GitPrivate/azure-docs-pr/articles/machine-learning"
 
 # for my toc with 286 files, this takes about 6-7 seconds
-merged <- createFinal(myrepo, merge=F)
+final <- createFinal(myrepo, merge=T)
 
-write.csv(merged, file= "TOC.csv", na="")
+write.csv(final, file= "TOC.csv", na="")
 
 
